@@ -1,7 +1,27 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+package test;
+
+import java.time.LocalDate;
+
+import model.Bacheca;
+import model.ColoreSfondo;
+import model.StatoToDo;
+import model.TipoBacheca;
+import model.ToDo;
+import model.Utente;
+
+public class MainTest {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Utente u1 = new Utente(1, "luca.rea", "javatiodio");
+
+        Bacheca b1 = new Bacheca("Esami", "Object", TipoBacheca.UNIVERSITA);
+        
+        ToDo t1 = new ToDo("Studiare Lso", LocalDate.of(2025, 5, 10), 
+                "Da pagina 30 a 40", StatoToDo.NON_COMPLETATO, 1, ColoreSfondo.ROSSO);
+        
+        b1.aggiungiToDo(t1);
+
+        System.out.println("Utente: " + u1);
+        System.out.println("Bacheca: " + b1);
+        System.out.println("ToDo: " + t1);
     }
 }
